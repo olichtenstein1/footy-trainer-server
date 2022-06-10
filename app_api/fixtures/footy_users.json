@@ -1,0 +1,14 @@
+[
+    {
+        "model": "app_api.footyuser",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "Me",
+            "years_of_experience": 3,
+            "favorite_player": "Luke Shaw",
+            "favorite_player_image": "",
+            "profile_picture": ""
+        }
+    }
+]

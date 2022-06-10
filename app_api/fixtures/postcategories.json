@@ -1,0 +1,25 @@
+[{
+    "model": "app_api.postcategories",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "post": 1
+    }
+},
+{
+    "model": "app_api.postcategories",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "post": 2
+    }
+},
+{
+    "model": "app_api.postcategories",
+    "pk": 3,
+    "fields": {
+        "category": 2,
+        "post": 3
+    }
+}
+]

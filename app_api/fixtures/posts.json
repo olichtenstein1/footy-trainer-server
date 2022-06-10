@@ -1,0 +1,38 @@
+[
+    {
+        "model": "app_api.post",
+        "pk": 1,
+        "fields": {
+            "footy_user": 1,
+            "difficulty_level": 2,
+            "description": "To kick the ball with more power, use the top of your foot",
+            "video_tutorial": "",
+            "topic_id": 1,
+            "title": "Kicking It!"
+        }
+    },
+    {
+        "model": "app_api.post",
+        "pk": 2,
+        "fields": {
+            "footy_user": 1,
+            "difficulty_level": 1,
+            "description": "To pass the ball with more accuracy, use the inside of your foot",
+            "video_tutorial": "",
+            "topic_id": 2,
+            "title": "Simple Passes!"
+        }
+    },
+    {
+        "model": "app_api.post",
+        "pk": 3,
+        "fields": {
+            "footy_user": 1,
+            "difficulty_level": 5,
+            "description": "Short quick passes can be more effective than long balls at times.",
+            "video_tutorial": "",
+            "topic_id": 2,
+            "title": "Tiki Taka!"
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+    "model": "app_api.topic",
+    "pk": 1,
+    "fields": {
+        "label": "Power Shooting"
+    }
+    },
+    {
+        "model": "app_api.topic",
+        "pk": 2,
+        "fields": {
+            "label": "Precision passes"
+        }
+    }
+]
