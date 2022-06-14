@@ -19,6 +19,7 @@ from app_api.views import register_user, login_user
 from rest_framework import routers
 from django.conf.urls import include
 from app_api.views import CategoryView, PostView, TopicView
+from app_api.views.footy_user import FootyUserView
 
 
 
@@ -26,6 +27,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryView, 'category')
 router.register(r'posts', PostView, 'post')
 router.register(r'topics', TopicView, 'topic')
+router.register(r'footy_users', FootyUserView, 'footy_user')
 
 
 urlpatterns = [
