@@ -51,6 +51,17 @@ class PostView(ViewSet):
         post.category.add(request.data["category"])
         
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def update(self, request, pk):
+        # ? .get(pk=pk)
+        post = Post.objects.get(pk=pk)
+        # ? post is the current post retrieved but why the second data parameter?
+        
+        serializer = CreatePostSerializer(post, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        
         
     @action(methods=["get"], detail=False)
     def post_by_category(self, request):
