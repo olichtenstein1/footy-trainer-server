@@ -11,7 +11,7 @@ class FootyUserView(ViewSet):
     
     def retrieve(self, request, pk):
         
-        footy_user = FootyUser.objects.get(pk=pk)
+        footy_user = FootyUser.objects.get(user=request.auth.user)
         serializer = FootyUserSerializer(footy_user)
         return Response(serializer.data)
 
@@ -34,5 +34,5 @@ class FootyUserSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = FootyUser
-        fields = ('id', 'bio', 'profile_picture', 'user', 'favorite_player', 'favorite_player_img', 'years_of_experience' )
+        fields = ('id', 'bio', 'profile_picture', 'user', 'favorite_player', 'favorite_player_image', 'years_of_experience' )
         depth = 2

@@ -8,6 +8,7 @@ class Post(models.Model):
      difficulty_level = models.IntegerField()
      description = models.TextField()
      title = models.TextField()
-     video_tutorial = models.URLField(max_length=200)
-     topic = models.ForeignKey("Topic", on_delete=models.CASCADE)
+     video_tutorial = models.URLField(max_length=200, null=True)
+     topics = models.ManyToManyField("Topic", related_name= "posts" )
+     # change category to foreign key model eventually
      category = models.ManyToManyField("Category", through="PostCategories", related_name="posts")

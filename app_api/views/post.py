@@ -65,10 +65,10 @@ class PostSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Post
-        fields = ('id','difficulty_level', 'description', 'video_tutorial', 'footy_user', 'topic', 'title', 'category')
-        depth = 2
+        fields = ('id','difficulty_level', 'description', 'video_tutorial', 'footy_user', 'topics', 'title', 'category', 'comments')
+        depth = 3
         
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'difficulty_level', 'description', 'video_tutorial', 'topic', 'title']
+        fields = ['id', 'difficulty_level', 'description', 'video_tutorial', 'topics', 'title']
