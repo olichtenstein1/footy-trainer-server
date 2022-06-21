@@ -1,2 +1,2 @@
-DELETE FROM app_api_category
-WHERE id > 3
+DELETE FROM app_api_post
+WHERE id = 22

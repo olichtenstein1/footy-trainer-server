@@ -61,6 +61,11 @@ class PostView(ViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    def destroy(self, request, pk):
+            post = Post.objects.get(pk=pk)
+            post.delete()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
         
         
     @action(methods=["get"], detail=False)
@@ -82,4 +87,4 @@ class PostSerializer(serializers.ModelSerializer):
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'difficulty_level', 'description', 'video_tutorial', 'topics', 'title']
+        fields = ['id', 'difficulty_level', 'description', 'video_tutorial', 'topics', 'title', 'category']

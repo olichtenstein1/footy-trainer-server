@@ -38,6 +38,18 @@ class CommentView(ViewSet):
         serializer.save(footy_user=footy_user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
+    def update(self, request, pk):
+        comment = Comment.objects.get(pk=pk)
+        serializer = CreateCommentSerializer(comment, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    def destroy(self, request, pk):
+            comment = Comment.objects.get(pk=pk)
+            comment.delete()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
 
 class CommentSerializer(serializers.ModelSerializer):
     """JSON serializer for post comments

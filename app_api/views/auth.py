@@ -6,6 +6,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 
+from app_api.models.footyuser import FootyUser
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -44,12 +46,23 @@ def register_user(request):
     new_user = User.objects.create_user(
         username=request.data['username'],
         password=request.data['password'],
+        first_name=request.data['first_name'],
+        last_name=request.data['last_name']
     )
 
     # TODO: If you're using a model with a 1 to 1 relationship to the django user, create that object here
-
+    footy_user = FootyUser.objects.create(
+        bio=request.data['bio'],
+        years_of_experience=request.data['years_of_experience'],
+        favorite_player=request.data['favorite_player'],
+        favorite_player_image=request.data['favorite_player_image'],
+        profile_picture=request.data['profile_picture'],
+        user=new_user
+        
+        
+    )
     
-    token = Token.objects.create(user=new_user)
+    token = Token.objects.create(user=footy_user.user)
     # TODO: If you need to send the client more information update the data dict
     
     data = { 'token': token.key }
